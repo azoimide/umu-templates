@@ -1,0 +1,64 @@
+\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+\mode<presentation>
+  {
+   \usetheme{UmU}
+  }
+
+  \usepackage{times}
+  \usepackage[english]{babel}
+  \usepackage[latin1]{inputenc}
+  \usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+
+  \usepackage{blindtext}
+  \usepackage{ragged2e} 
+  \addtobeamertemplate{block begin}{}{\vspace{1cm}\justifying}
+  \addtobeamertemplate{block end}{}{\vspace{3cm}}
+
+  \title{The Title}
+  \author{The Author}
+  \date{\today}
+
+\begin{document}
+    \begin{frame}[t]
+
+    \begin{columns}[t]
+
+        \begin{column}{.48\textwidth}
+
+            \begin{block}{Block 1}
+                \blindtext
+            \end{block}
+
+            \begin{block}{Block 2}
+                \begin{itemize}
+                    \item hej
+                    \item hej
+                    \item hej
+                    \begin{itemize}
+                        \item hej
+                    \end{itemize}
+                \end{itemize}
+            \end{block}
+
+            \begin{block}{}
+                \begin{figure}
+                    \includegraphics[width=.3\textwidth]{umu_logo_circle.png}
+                    \caption{this is a caption!!!!}
+                \end{figure}
+            \end{block}
+
+        \end{column}
+
+
+        \begin{column}{.48\textwidth}
+
+            \begin{block}{b1}
+                \blindtext
+            \end{block}
+
+        \end{column}
+
+    \end{columns}
+
+    \end{frame}
+\end{document}

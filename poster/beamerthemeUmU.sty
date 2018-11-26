@@ -1,0 +1,132 @@
+\ProvidesPackage{beamerthemeUmU}  
+
+\RequirePackage{tikz}
+\usetikzlibrary{positioning, calc}
+\mode<presentation>
+
+\setbeamertemplate{caption}[numbered]
+
+\definecolor{bannercolor}{RGB}{39,63,93}
+
+\setbeamerfont{title}{size=\HUGE, series=\bf}
+\setbeamercolor{title}{fg=white}
+
+\setbeamercolor{block title}{fg=black}
+\setbeamerfont{block title}{size=\Large}
+
+\setbeamerfont{block body}{series=\bf}
+
+\setbeamercolor{caption name}{fg=black}
+\setbeamerfont{caption}{series=\bf}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setbeamertemplate{block begin}{
+%   \vskip.75ex
+%   \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1cm,colsep*=.75ex]{block title}%
+%     \usebeamerfont*{block title}\insertblocktitle
+%   \end{beamercolorbox}%
+%   {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+%   \usebeamerfont{block body}%
+%   \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+%     \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+%   }
+%   \setbeamertemplate{block end}{
+%   \end{beamercolorbox}
+% }
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setbeamertemplate{headline}{  
+%   \leavevmode
+
+%   \begin{beamercolorbox}[wd=\paperwidth]{headline}
+%     \begin{columns}[T]
+%       \begin{column}{.02\paperwidth}
+%       \end{column}
+%       \begin{column}{.07\paperwidth}
+%         \begin{center}
+%           %\includegraphics[width=.6\linewidth]{logos/i6-hks44}
+%         \end{center}
+%         \vskip1ex
+%       \end{column}
+%       \begin{column}{.675\paperwidth}
+%         \vskip4ex
+%         \raggedleft
+%         \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+%         \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+%         \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}     
+%       \end{column}
+%       \begin{column}{.25\paperwidth}
+%         \vskip1cm
+%         \begin{center}
+%           % \includegraphics[width=.7\linewidth]{deselaers/logos/rwthaachenuniversity-whitegray}
+%         \end{center}
+%         \vskip1.5cm
+%       \end{column}
+%       \begin{column}{.03\paperwidth}
+%       \end{column}
+%     \end{columns}
+%   \end{beamercolorbox}
+% }
+
+%  \setbeamertemplate{headline}{  
+%    \leavevmode
+%    \begin{beamercolorbox}[sep=0.5cm,wd=.8\paperwidth]{headline}
+%      \usebeamercolor{title in headline}{\raggedleft\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+%      \usebeamercolor{author in headline}{\raggedleft\color{fg}\large{\insertauthor}\\[1ex]}
+%      \usebeamercolor{institute in headline}{\raggedleft\color{fg}\large{\insertinstitute}\\[1ex]}     
+%    \end{beamercolorbox}%
+%    \begin{beamercolorbox}[wd=.2\paperwidth]{logo in headline}
+%      \centering
+%      \LARGE{LOGO}
+%    \end{beamercolorbox}  
+
+%    \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+%      \rule{0pt}{2pt}
+%    \end{beamercolorbox}
+%}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setbeamertemplate{footline}{
+%   \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+%     \rule{0pt}{2pt}
+%   \end{beamercolorbox}
+  
+%   \leavevmode%
+%   \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+%       \texttt{http://www-i6.informatik.rwth-aachen.de}
+%     \end{beamercolorbox}%
+%     \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+%       \texttt{<surname>@cs.rwth-aachen.de}
+%     \end{beamercolorbox}}%
+%   \vskip0pt%
+%   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+%     \rule{0pt}{2pt}
+%   \end{beamercolorbox}
+% }
+
+\setbeamertemplate{headline}{
+    \begin{tikzpicture}
+        \useasboundingbox (0, 0) rectangle (\paperwidth, .195\paperheight);
+        \fill [color=bannercolor] (.034\paperwidth, 0) rectangle (.966\paperwidth, .145\paperheight);
+        \node (logocircle) at (.5\textwidth, 172mm) {\includegraphics[width=56mm]{umu_logo_circle.png}};
+        % \node (title) at (.5\paperwidth, .072\paperheight) {\usebeamerfont{title} \usebeamercolor{title} \inserttitle};
+        \node (title) at (.5\paperwidth, .072\paperheight) {\Large \textbf{\textcolor{white}{\inserttitle}}};
+        \node (title) at (.5\paperwidth, .036\paperheight) {\large \textbf{\textcolor{white}{\insertauthor}}};
+    \end{tikzpicture}
+}
+
+\setbeamertemplate{footline}{
+    \begin{tikzpicture}
+        \useasboundingbox (0, 0) rectangle (\paperwidth, .056\paperheight);
+        \draw [color=black] (.034\paperwidth, .092\paperheight) -- 
+            (.966\paperwidth, .092\paperheight);
+        \node [anchor=south] (umuname) at (.5\paperwidth, .056\paperheight) 
+            {\includegraphics[width=.31\paperwidth]{umu-name.png}};
+    \end{tikzpicture}
+}
+
+\mode<all>
+
