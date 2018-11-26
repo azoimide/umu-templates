@@ -1,0 +1,83 @@
+\mode<presentation>
+
+\setbeamersize{text margin left=1.74cm}
+
+\usepackage{fontspec}
+    \newfontfamily\helveticalike{TeX Gyre Heros}
+
+\setbeamerfont{title}{size*={14pt}{0pt},series=\bfseries,family=\helveticalike}
+\setbeamerfont{subtitle}{size*={9pt}{0pt},series=\bfseries,family=\helveticalike}
+\setbeamerfont{author}{size*={7pt}{0pt},series=\bfseries,family=\helveticalike}
+\setbeamerfont{date}{size*={6pt}{0pt},series=\bfseries,family=\helveticalike}
+
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{subtitle}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+
+\setbeamertemplate{title page}{
+    \begin{tikzpicture}
+        % \useasboundingbox (0 + 1cm,0) rectangle(\the\paperwidth,\the\paperheight);
+        \useasboundingbox (0 + 1.75cm, 0) rectangle(\the\paperwidth,\the\paperheight);
+        \fill[fill={rgb:red,42;green,71;blue,101}] (.26cm, .26cm) rectangle (\the\paperwidth - .26cm, \the\paperheight - .26cm);
+        \node [anchor=north] (logo) at (.5*\the\paperwidth, \the\paperheight - 7.45cm) {\includegraphics[width=2.83cm]{umu-logo-titlepage}};
+        \node[anchor=south] (title) at (.5*\the\paperwidth, \the\paperheight - 4.26cm) {
+            \fontsize{6mm}{0}\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle
+        };
+        \node (subtitle) at (.5*\the\paperwidth, \the\paperheight - 4.6cm) {
+            \usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle
+        };
+        \node (author) at (.5*\the\paperwidth, \the\paperheight - 5.8cm) {
+            \usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor
+        };
+        \node (date) at (.5*\the\paperwidth, \the\paperheight - 6.5cm) {
+            \usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate
+        };
+    \end{tikzpicture}
+}
+
+\setbeamertemplate{background}{
+    \begin{tikzpicture}
+        \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+        \node [anchor=north] (logo) at (.5*\the\paperwidth, \the\paperheight - 8.28cm) {\includegraphics[width=2.7cm]{umu-logo-textpage}};
+    \end{tikzpicture}
+}
+
+\setbeamerfont{frametitle}{size*={14pt}{0pt},series=\bfseries,family=\helveticalike}
+\setbeamerfont{framesubtitle}{size*={11pt}{0pt},series=\bfseries,family=\helveticalike}
+
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{framesubtitle}{fg=black}
+
+\setbeamertemplate{frametitle}{
+    \begin{tikzpicture}
+        \useasboundingbox (0 + 1.75cm,\the\paperheight - 2.16cm) rectangle(\the\paperwidth,\the\paperheight);
+        \node[anchor=south] (frametitle) at (.5*\the\paperwidth, \the\paperheight - 1.35cm) {
+            \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+        };5
+        \node[anchor=north] (frametitle) at (.5*\the\paperwidth, \the\paperheight - 1.35cm) {
+            \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle
+        };
+    \end{tikzpicture}
+    \vspace{-3.5cm}
+}
+
+
+
+% % Title page
+% \defbeamertemplate*{title page}{texsx}[1][]
+% { 
+% \vskip6cm%
+% \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+%     \usebeamerfont{title}\inserttitle\par%
+% \end{beamercolorbox}%
+% \vskip0.75cm%
+% \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+%     \usebeamerfont{author}\insertauthor%
+% \end{beamercolorbox}
+% \vskip0.2cm%
+% \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+%     \usebeamerfont{author}\insertdate%
+% \end{beamercolorbox}
+% \vfill
+% }
